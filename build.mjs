@@ -131,7 +131,7 @@ function layout(lang, page, body) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a1031">
+  <meta name="theme-color" content="#f7f7ff">
   <meta name="description" content="${current.description}">
   <title>${current.title}</title>
   <link rel="icon" type="image/jpeg" href="${assetRoot}images/Icon.jpg">
@@ -142,14 +142,14 @@ function layout(lang, page, body) {
 <body>
   <div class="site-shell">
     <header class="site-header">
-      <div class="header-left">
-        <nav class="language-switch" aria-label="Language / Taal">
-          <a href="${languageHref('nl')}" lang="nl" hreflang="nl"${lang === 'nl' ? ' aria-current="true"' : ''}><span aria-hidden="true">🇳🇱</span><span>NL</span></a>
-          <a href="${languageHref('en')}" lang="en" hreflang="en"${lang === 'en' ? ' aria-current="true"' : ''}><span aria-hidden="true">🇬🇧</span><span>EN</span></a>
-        </nav>
+      <div class="header-brand-nav">
         <a class="wordmark" href="./" aria-label="Verweij IT Creations — ${c.nav.home}"><img src="${assetRoot}images/logo.png" alt="Verweij IT Creations" width="220" height="44"></a>
+        <nav class="primary-nav" aria-label="${lang === 'nl' ? 'Hoofdnavigatie' : 'Main navigation'}">${nav('home')}${nav('ideas')}</nav>
       </div>
-      <nav class="primary-nav" aria-label="${lang === 'nl' ? 'Hoofdnavigatie' : 'Main navigation'}">${nav('home')}${nav('ideas')}</nav>
+      <nav class="language-switch" aria-label="Language / Taal">
+        <a href="${languageHref('nl')}" lang="nl" hreflang="nl"${lang === 'nl' ? ' aria-current="true"' : ''}><span aria-hidden="true">🇳🇱</span><span>NL</span></a>
+        <a href="${languageHref('en')}" lang="en" hreflang="en"${lang === 'en' ? ' aria-current="true"' : ''}><span aria-hidden="true">🇬🇧</span><span>EN</span></a>
+      </nav>
     </header>
     <main id="main-content">${body}</main>
     <footer class="site-footer">
