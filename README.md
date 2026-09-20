@@ -1,10 +1,10 @@
 # Verweij IT Creations website
 
-Static Dutch and English company site for `www.itcreations.nl`, published with GitHub Pages from `main`.
+Static Dutch and English company site for `www.itcreations.nl`, intended for GitHub Pages from `main`.
 
 ## Edit and build
 
-Edit the text in `build.mjs`, then run `node build.mjs` from the repository root. The generated HTML is committed so Pages can publish it directly. Styles live in `assets/site.css`; the three project avatars come from the Puck, Theseus, and Feste repositories in the same workspace.
+Edit the text in `build.mjs`, then run `node build.mjs` from the repository root. The generated HTML is committed so Pages can publish it directly. Styles live in `assets/site.css`. The site uses `logo.png` for the header, `Icon.jpg` for the favicon, and `DSC_1056.jpg` for the founder section. The three project avatars come from the Puck, Theseus, and Feste repositories in the same workspace.
 
 ## Pages and DNS
 
