@@ -1,8 +1,10 @@
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
 
 const origin = 'https://www.itcreations.nl'
 const email = 'verweij@itcreations.nl'
 const year = new Date().getUTCFullYear()
+const styleVersion = createHash('sha256').update(await readFile('assets/site.css')).digest('hex').slice(0, 12)
 
 const copy = {
   nl: {
@@ -137,7 +139,7 @@ function layout(lang, page, body) {
   <link rel="icon" type="image/jpeg" href="${assetRoot}images/Icon.jpg">
   <link rel="canonical" href="${origin}${canonicalPath}">
   <link rel="alternate" hreflang="${lang === 'nl' ? 'en' : 'nl'}" href="${origin}${alternatePath}">
-  <link rel="stylesheet" href="${assetRoot}site.css">
+  <link rel="stylesheet" href="${assetRoot}site.css?v=${styleVersion}">
 </head>
 <body>
   <div class="site-shell">
